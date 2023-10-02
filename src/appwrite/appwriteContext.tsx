@@ -28,7 +28,6 @@ export const AppwriteProvider = ({children}: AppwriteProviderProps) => {
 
   useEffect(() => {
     const initAppwrite = async () => {
-      console.log('hehe');
       const client = new Client();
       client
         .setEndpoint('PROJECT_ENDPOINT') // Set your Appwrite Endpoint here.

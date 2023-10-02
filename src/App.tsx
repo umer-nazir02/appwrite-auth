@@ -21,13 +21,13 @@ export default function App() {
     <GestureHandlerRootView style={styles.container}>
       <ThemeProvider>
         <SafeAreaProvider>
-          <AppwriteProvider>
-            <NavigationContainer>
-              <QueryClientProvider client={queryClient}>
-                <MainStack />
-              </QueryClientProvider>
-            </NavigationContainer>
-          </AppwriteProvider>
+          {/* <AppwriteProvider> */}
+          <NavigationContainer>
+            <QueryClientProvider client={queryClient}>
+              <MainStack />
+            </QueryClientProvider>
+          </NavigationContainer>
+          {/* </AppwriteProvider> */}
         </SafeAreaProvider>
       </ThemeProvider>
     </GestureHandlerRootView>

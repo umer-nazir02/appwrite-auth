@@ -4,7 +4,8 @@ import {Button, Input} from '@rneui/themed';
 import {Switch} from '@rneui/base';
 import {useNavigation} from '@react-navigation/native';
 import {useTheme} from '../../Theme/ThemeContext';
-import {useAppwrite} from '../../appwrite/appwriteContext';
+// import {useAppwrite} from '../../appwrite/appwriteContext';
+import {Account, Client} from 'appwrite';
 // import {Account} from 'appwrite';
 
 const Login: FC = () => {
@@ -14,9 +15,16 @@ const Login: FC = () => {
 
   const navigation = useNavigation();
   const {colors, toggleTheme} = useTheme();
-  const {account} = useAppwrite();
+  // const {account} = useAppwrite();
 
   const loginUser = () => {
+    const client = new Client();
+    client
+      .setEndpoint('PROJECT_ENDPOINT') // Set your Appwrite Endpoint here.
+      .setProject('PROJECT_ID'); // Set your Project ID here.
+
+    const account = new Account(client);
+
     account
       ?.createEmailSession(email, password)
       .then(res => {
