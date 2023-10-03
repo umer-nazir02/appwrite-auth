@@ -18,7 +18,7 @@ const Login: FC = () => {
 
   const loginUser = () => {
     account
-      ?.createEmailSession(email, password)
+      .createEmailSession(email, password)
       .then(res => {
         console.log(res);
       })
